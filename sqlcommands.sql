@@ -26,3 +26,6 @@ INSERT INTO `petshop`.`packanimals` (`Name`, `Type`, `BirthDate`, `Commands`) VA
 INSERT INTO `petshop`.`packanimals` (`Name`, `Type`, `BirthDate`, `Commands`) VALUES ('Eeyore', 'Donkey', '2017-09-18', 'Walk, Carry Load, Bray');
 INSERT INTO `petshop`.`packanimals` (`Name`, `Type`, `BirthDate`, `Commands`) VALUES ('Storm', 'Horse', '2014-05-05', 'Trot, Canter');
 
+CREATE TABLE `petshop`.`humanfriends` AS SELECT * FROM `petshop`.`packanimals` WHERE Type='Horse' OR Type='Donkey';
+
+DELETE FROM `petshop`.`packanimals` WHERE TYPE = 'Camel';
