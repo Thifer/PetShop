@@ -11,12 +11,11 @@ public class Main {
         System.out.println("Вас приветствует программа учета животных");
         while (true){
             MenuPrint();
-            Menu(scanner.nextLine());
         }
     }
 
-    private static void Menu(String answer) {
-        switch (answer) {
+    private static void Menu() {
+        switch (scanner.nextLine()) {
             case "1" -> AddPet();
             case "2" -> ShowCommand();
             case "3" -> AddCommand();
@@ -31,6 +30,7 @@ public class Main {
         System.out.println("2.Показать информацию о командах");
         System.out.println("3.Добавить команду");
         System.out.println("4.Выход");
+        Menu();
     }
 
 
@@ -54,7 +54,7 @@ public class Main {
             System.out.println(i+1+" "+pet.getName());
             i++;
         }
-        return scanner.nextInt()-1;
+        return Integer.parseInt(scanner.nextLine())- 1;
     }
 
     private static void AddPet(){
