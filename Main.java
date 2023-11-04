@@ -94,24 +94,12 @@ public class Main {
             return;
         }
         switch (type) {
-            case Cat -> {
-                petsArrayList.add(new Cat(name,BirthDate,command));
-            }
-            case Dog -> {
-                petsArrayList.add(new Dog(name,BirthDate,command));
-            }
-            case Hamster -> {
-                petsArrayList.add(new Hamster(name,BirthDate,command));
-            }
-            case Horse -> {
-                petsArrayList.add(new Horse(name,BirthDate,command));
-            }
-            case Camel -> {
-                petsArrayList.add(new Camel(name,BirthDate,command));
-            }
-            case Donkey -> {
-                petsArrayList.add(new Donkey(name,BirthDate,command));
-            }
+            case Cat -> petsArrayList.add(new Cat(name,BirthDate,command));
+            case Dog -> petsArrayList.add(new Dog(name,BirthDate,command));
+            case Hamster -> petsArrayList.add(new Hamster(name,BirthDate,command));
+            case Horse -> petsArrayList.add(new Horse(name,BirthDate,command));
+            case Camel -> petsArrayList.add(new Camel(name,BirthDate,command));
+            case Donkey -> petsArrayList.add(new Donkey(name,BirthDate,command));
         }
 
     }
