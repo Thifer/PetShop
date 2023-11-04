@@ -8,13 +8,10 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String answer;
-
         System.out.println("Вас приветствует программа учета животных");
         while (true){
             MenuPrint();
-            answer = scanner.nextLine();
-            Menu(answer);
+            Menu(scanner.nextLine());
         }
     }
 
@@ -39,14 +36,14 @@ public class Main {
 
     private static void ShowCommand(){
         int i = ChosePet();
-        System.out.println("Список комманд для " + petsArrayList.get(i).Name+" :");
-        System.out.println(petsArrayList.get(i).Commands);
+        System.out.println("Список комманд для " + petsArrayList.get(i).getName()+" :");
+        System.out.println(petsArrayList.get(i).getCommands());
     }
 
     private static void AddCommand(){
         int i = ChosePet();
-        System.out.println("Какие комманды вы ходите добавить для " +petsArrayList.get(i)+":");
-        petsArrayList.get(i).Commands+=scanner.nextLine();
+        System.out.println("Какие комманды вы ходите добавить для " +petsArrayList.get(i).getName()+":");
+        petsArrayList.get(i).setCommands(petsArrayList.get(i).getCommands()+scanner.nextLine());
     }
 
     private static int ChosePet(){
@@ -54,8 +51,8 @@ public class Main {
         System.out.println("Выберите номер животного");
         for (Pets pet:
              petsArrayList) {
-            System.out.println(i+1+" "+pet.Name);
-
+            System.out.println(i+1+" "+pet.getName());
+            i++;
         }
         return scanner.nextInt()-1;
     }

@@ -1,10 +1,10 @@
 package Model;
 
 public abstract class Pets {
-    public String Name;
-    public PetType Type;
-    public String BirthDate;
-    public String Commands;
+    private String Name;
+    private PetType Type;
+    private String BirthDate;
+    private String Commands;
 
     public Pets(String name,PetType Type, String birthdate,String Command){
         this.Name = name;
@@ -21,5 +21,17 @@ public abstract class Pets {
                 "Дата рождения='" + BirthDate + '\n' +
                 "Комманды='" + Commands + '\n'+
                 "=================";
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getCommands() {
+        return Commands;
+    }
+
+    public void setCommands(String commands) {
+        Commands = commands;
     }
 }
