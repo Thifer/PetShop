@@ -19,22 +19,12 @@ public class Main {
     }
 
     private static void Menu(String answer) {
-        switch (answer){
-            case "1":
-                AddPet();
-                break;
-            case "2":
-                for (Pets pet: petsArrayList
-                     ) {
-                    System.out.println(pet.toString());
-                }
-                break;
-            case "3":
-                break;
-            case "4":
-                System.exit(0);
-            default:
-                System.out.println("Комманда не распознана");
+        switch (answer) {
+            case "1" -> AddPet();
+            case "2" -> ShowCommand();
+            case "3" -> AddCommand();
+            case "4" -> System.exit(0);
+            default -> System.out.println("Комманда не распознана");
         }
     }
 
@@ -46,6 +36,29 @@ public class Main {
         System.out.println("4.Выход");
     }
 
+
+    private static void ShowCommand(){
+        int i = ChosePet();
+        System.out.println("Список комманд для " + petsArrayList.get(i).Name+" :");
+        System.out.println(petsArrayList.get(i).Commands);
+    }
+
+    private static void AddCommand(){
+        int i = ChosePet();
+        System.out.println("Какие комманды вы ходите добавить для " +petsArrayList.get(i)+":");
+        petsArrayList.get(i).Commands+=scanner.nextLine();
+    }
+
+    private static int ChosePet(){
+        int i = 0;
+        System.out.println("Выберите номер животного");
+        for (Pets pet:
+             petsArrayList) {
+            System.out.println(i+1+" "+pet.Name);
+
+        }
+        return scanner.nextInt()-1;
+    }
 
     private static void AddPet(){
         String name;
