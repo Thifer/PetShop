@@ -19,7 +19,8 @@ public class Main {
             case "1" -> AddPet();
             case "2" -> ShowCommand();
             case "3" -> AddCommand();
-            case "4" -> System.exit(0);
+            case "4" -> ShowTotalPets();
+            case "5" -> System.exit(0);
             default -> System.out.println("Комманда не распознана");
         }
     }
@@ -29,8 +30,22 @@ public class Main {
         System.out.println("1.Добавить животное");
         System.out.println("2.Показать информацию о командах");
         System.out.println("3.Добавить команду");
-        System.out.println("4.Выход");
+        System.out.println("4.Количество животныз");
+        System.out.println("5.Выход");
         Menu();
+    }
+
+    private static void ShowTotalPets(){
+        System.out.println("Какиж животных посчитать?");
+        System.out.println("1.Домашних");
+        System.out.println("2.Вьючных");
+        System.out.println("3.Всех");
+        switch (scanner.nextLine()){
+            case "1" -> System.out.println("Домашних : "+petsArrayList.stream().filter((p) -> p instanceof HomePets).count());
+            case "2" -> System.out.println("Вьючных : "+petsArrayList.stream().filter((p) -> p instanceof PackAnimals).count());
+            case "3" -> System.out.println("Всего животных : "+petsArrayList.size());
+        }
+
     }
 
 
